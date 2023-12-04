@@ -1,3 +1,5 @@
+1)
+
 alick-ubuntu@alick-ubuntu-GB:~$ cat >Pets
 
 alick-ubuntu@alick-ubuntu-GB:~$ cat >"Pack animals"
@@ -30,3 +32,121 @@ alick-ubuntu@alick-ubuntu-GB:~$ ls
  dz              'Pack animals'   wordpress       Изображения     Шаблоны
 'Human Friends'   snap            Видео           Музыка
  nano.2583.save   tmp             Документы       Общедоступные
+
+2)
+
+alick-ubuntu@alick-ubuntu-GB:~$ mkdir new_dir
+
+alick-ubuntu@alick-ubuntu-GB:~$ mv "Human Friends" ./new_dir
+
+alick-ubuntu@alick-ubuntu-GB:~$ cd new_dir/
+
+alick-ubuntu@alick-ubuntu-GB:~/new_dir$ ls
+'Human Friends'
+
+3)
+
+Перейдем на страницу загрузки репозитория MySQL APT по адресу  https://dev.mysql.com/downloads/repo/apt/, скачаем его
+
+alick-ubuntu@alick-ubuntu-GB:~ cd ./Загрузки/
+
+alick-ubuntu@alick-ubuntu-GB:~ /Загрузки$ sudo dpkg -i mysql-apt-config_0.8.28-1_all.deb 
+
+alick-ubuntu@alick-ubuntu-GB:~ sudo apt-get install mysql-server
+
+alick-ubuntu@alick-ubuntu-GB:~/Загрузки$ systemctl status mysql
+
+● mysql.service - MySQL Community Server
+
+     Loaded: loaded (/lib/systemd/system/mysql.service; enabled; vendor preset: enabled)
+
+     Active: active (running) since Mon 2023-12-04 21:10:40 +10; 2min 40s ago
+
+    Process: 25993 ExecStartPre=/usr/share/mysql/mysql-systemd-start pre (code=exited, status=0/SUCCESS)
+
+   Main PID: 26001 (mysqld)
+
+     Status: "Server is operational"
+
+      Tasks: 37 (limit: 3546)
+
+     Memory: 368.5M
+
+        CPU: 2.013s
+
+     CGroup: /system.slice/mysql.service
+
+             └─26001 /usr/sbin/mysqld
+
+4)
+
+alick-ubuntu@alick-ubuntu-GB:~/Загрузки$ sudo dpkg -r mysql-server
+
+(Чтение базы данных … на данный момент установлено 253020 файлов и каталогов.)
+
+Удаляется mysql-server (8.0.35-0ubuntu0.22.04.1) …
+
+alick-ubuntu@alick-ubuntu-GB:~/Загрузки$ sudo apt-get autoremove
+
+5)
+
+  396  cat >Pets
+
+  397  cat Pets
+
+  398  cat >Pack animals
+
+  399  cat >"Pack animals"
+
+  400  cat "Pack animals"
+
+  401  cat >Pets
+
+  402  cat Pets
+
+  403  cat >"Pack animals"
+
+  404  cat "Pack animals" >> Pets
+
+  405  cat Pets
+
+  406  mv Pets "Human Friends"
+
+  407  ls
+
+  408  mkdir new_dir
+
+  409  ls
+
+  410  mv "Human Friends" ./new_dir
+
+  411  ls
+
+  412  cd new_dir/
+
+  413  ls
+
+  414  cd ..
+
+  415  cd ./Загрузки/
+
+  416  ls
+
+  417  sudo dpkg -i mysql-apt-config_0.8.28-1_all.deb 
+
+  418  kill 6306
+
+  419  sudo kill 6306
+
+  420  sudo dpkg -i mysql-apt-config_0.8.28-1_all.deb 
+
+  421  systemctl status mysql
+
+  422  sudo dpkg -r mysql-connector-j
+
+  423  sudo dpkg -r mysql-server
+
+  424  sudo apt-get autoremove
+
+  425  history
+
