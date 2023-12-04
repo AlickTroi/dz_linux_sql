@@ -1,0 +1,32 @@
+alick-ubuntu@alick-ubuntu-GB:~$ cat >Pets
+
+alick-ubuntu@alick-ubuntu-GB:~$ cat >"Pack animals"
+
+alick-ubuntu@alick-ubuntu-GB:~$ cat >Pets
+собаки,
+кошки,      
+хомяки
+
+alick-ubuntu@alick-ubuntu-GB:~$ cat >"Pack animals"
+лошади,
+верблюды,
+ослы
+
+alick-ubuntu@alick-ubuntu-GB:~$ cat "Pack animals" >> Pets
+
+alick-ubuntu@alick-ubuntu-GB:~$ cat Pets
+собаки,
+кошки,
+хомяки
+лошади,
+верблюды,
+ослы
+
+alick-ubuntu@alick-ubuntu-GB:~$ mv Pets "Human Friends"
+
+alick-ubuntu@alick-ubuntu-GB:~$ ls
+
+ docker           Pack            win-downlands   Загрузки       'Рабочий стол'
+ dz              'Pack animals'   wordpress       Изображения     Шаблоны
+'Human Friends'   snap            Видео           Музыка
+ nano.2583.save   tmp             Документы       Общедоступные
