@@ -1,0 +1,153 @@
+CREATE DATABASE dz;
+USE dz;
+
+CREATE TABLE dog 
+(
+	id INT PRIMARY KEY AUTO_INCREMENT,
+    animal_name VARCHAR(30) NOT NULL,
+    born Date NOT NULL,
+    comands TEXT
+);
+
+CREATE TABLE cat 
+(
+	id INT PRIMARY KEY AUTO_INCREMENT,
+    animal_name VARCHAR(30) NOT NULL,
+    born Date NOT NULL,
+    comands TEXT
+);
+
+CREATE TABLE hamster 
+(
+	id INT PRIMARY KEY AUTO_INCREMENT,
+    animal_name VARCHAR(30) NOT NULL,
+    born Date NOT NULL,
+    comands TEXT
+);
+
+CREATE TABLE horse 
+(
+	id INT PRIMARY KEY AUTO_INCREMENT,
+    animal_name VARCHAR(30) NOT NULL,
+    born Date NOT NULL,
+    comands TEXT
+);
+
+CREATE TABLE camel 
+(
+	id INT PRIMARY KEY AUTO_INCREMENT,
+    animal_name VARCHAR(30) NOT NULL,
+    born Date NOT NULL,
+    comands TEXT
+);
+
+CREATE TABLE donkey 
+(
+	id INT PRIMARY KEY AUTO_INCREMENT,
+    animal_name VARCHAR(30) NOT NULL,
+    born Date NOT NULL,
+    comands TEXT
+);
+
+INSERT INTO cat (animal_name, born, comands) VALUES 
+	('barsik', '2020-05-02', 'comand 1, comand 3'),
+	('myrsik', '2021-07-01', 'comand 2, comand 3'),
+    ('miaw', '2022-03-14', 'comand 3, comand 4'),
+    ('cat1', '2017-04-12', 'comand 5, comand 1'),
+    ('cat2', '2018-01-10', 'comand 8');
+    
+INSERT INTO dog (animal_name, born, comands) VALUES 
+	('dog', '2020-05-02', 'comand 5, comand 1'),
+	('dog1', '2021-07-01', 'comand 3, comand 2'),
+    ('dog2', '2022-03-14', 'comand 1, comand 0'),
+    ('dog3', '2017-04-12', 'comand 2, comand 0'),
+    ('dog4', '2018-01-10', 'comand 8');
+
+INSERT INTO hamster (animal_name, born, comands) VALUES 
+	('hamster', '2020-05-02', 'comand 5, comand 1'),
+	('hamster1', '2021-07-01', 'comand 3, comand 2'),
+    ('hamster2', '2022-03-14', 'comand 1, comand 0'),
+    ('hamster3', '2017-04-12', 'comand 2, comand 0'),
+    ('hamster4', '2018-01-10', 'comand 8');
+    
+INSERT INTO horse (animal_name, born, comands) VALUES 
+	('horse', '2020-05-02', 'comand 5, comand 1'),
+	('horse1', '2021-07-01', 'comand 3, comand 2'),
+    ('horse2', '2022-03-14', 'comand 1, comand 0'),
+    ('horse3', '2017-04-12', 'comand 2, comand 0'),
+    ('horse4', '2018-01-10', 'comand 8');
+    
+    INSERT INTO camel (animal_name, born, comands) VALUES 
+	('camel', '2020-05-02', 'comand 5, comand 1'),
+	('camel1', '2021-07-01', 'comand 3, comand 2'),
+    ('camel2', '2022-03-14', 'comand 1, comand 0'),
+    ('camel0', '2017-04-12', 'comand 2, comand 0'),
+    ('camel3', '2018-01-10', 'comand 8');
+    
+    INSERT INTO donkey (animal_name, born, comands) VALUES 
+	('donkey', '2020-05-02', 'comand 5, comand 1'),
+	('donkey1', '2021-07-01', 'comand 3, comand 2'),
+    ('donkey2', '2022-03-14', 'comand 1, comand 0'),
+    ('donkey3', '2017-04-12', 'comand 2, comand 0'),
+    ('donkey4', '2018-01-10', 'comand 8');
+    
+    DROP TABLE camel;
+    
+    CREATE TABLE camel 
+(
+	id INT PRIMARY KEY AUTO_INCREMENT,
+    animal_name VARCHAR(30) NOT NULL,
+    born Date NOT NULL,
+    comands TEXT
+);
+
+SELECT *
+FROM horse
+UNION
+SELECT * 
+FROM donkey;
+
+
+
+CREATE TABLE animal (
+	id INT PRIMARY KEY AUTO_INCREMENT,
+	animal_name CHAR(30),
+    commands TEXT,
+    born DATE,
+    age TEXT
+);
+
+
+DELIMITER //
+CREATE FUNCTION age_animal (date_b DATE)
+RETURNS TEXT
+DETERMINISTIC
+BEGIN
+    DECLARE res TEXT DEFAULT '';
+	SET res = CONCAT(
+            TIMESTAMPDIFF(YEAR, date_b, CURDATE()),
+            ' years ',
+            TIMESTAMPDIFF(MONTH, date_b, CURDATE()) % 12,
+            ' month'
+        );
+	RETURN res;
+END //
+DELIMITER ;
+
+SELECT *
+FROM cat
+UNION ALL
+SELECT *
+FROM dog
+UNION ALL
+SELECT *
+FROM hamster
+UNION ALL
+SELECT *
+FROM camel
+UNION ALL
+SELECT *
+FROM horse
+UNION ALL
+SELECT *
+FROM donkey;
